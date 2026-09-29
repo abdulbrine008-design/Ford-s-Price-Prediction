@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered Ford car price predictor">
+    <title>Ford Price Predictor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- Navigation -->
+    <header class="topbar">
+        <a href="#" class="brand">
+            <span class="brand-mark">F</span>
+            <span>FORD <span class="brand-accent">AI</span></span>
+        </a>
+
+        <div class="status-pill">
+            <span class="status-dot"></span>
+            AI PRICE PREDICTOR
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-copy">
+                <p class="eyebrow">MACHINE LEARNING • AUTOMOTIVE</p>
+
+                <h1>
+                    Discover your Ford's
+                    <span>estimated value.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Enter your vehicle details and let the trained
+                    machine-learning model estimate its price in seconds.
+                </p>
+            </div>
+
+            <div class="hero-badge">
+                <div class="speed-ring">
+                    <span class="speed-number">AI</span>
+                    <span class="speed-label">VALUATION</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Application -->
+        <section class="app-grid">
+
+            <!-- Input Card -->
+            <div class="card form-card">
+
+                <div class="card-heading">
+                    <div>
+                        <p class="section-kicker">VEHICLE DETAILS</p>
+                        <h2>Tell us about the car</h2>
+                    </div>
+
+                    <span class="step-badge">01</span>
+                </div>
+
+
+                <form id="predictionForm">
+
+                    <div class="form-grid">
+
+                        <!-- Car Model -->
+                        <div class="field field-wide">
+                            <label for="car_model">Car Model</label>
+
+                            <div class="input-wrap">
+                                <span class="input-icon">🚘</span>
+
+                                <input
+                                    type="text"
+                                    id="car_model"
+                                    placeholder="e.g. Focus"
+                                    required
+                                >
+                            </div>
+
+                            <small>
+                                Enter the Ford model name.
+                            </small>
+                        </div>
+
+
+                        <!-- Year -->
+                        <div class="field">
+                            <label for="year">Year</label>
+
+                            <div class="input-wrap">
+                                <span class="input-icon">📅</span>
+
+                                <input
+                                    type="number"
+                                    id="year"
+                                    min="1900"
+                                    max="2100"
+                                    placeholder="2020"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <!-- Mileage -->
+                        <div class="field">
+                            <label for="mileage">Mileage</label>
+
+                            <div class="input-wrap">
+                                <span class="input-icon">🛣️</span>
+
+                                <input
+                                    type="number"
+                                    id="mileage"
+                                    min="0"
+                                    step="0.1"
+                                    placeholder="35000"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <!-- Transmission -->
+                        <div class="field">
+                            <label for="transmission">
+                                Transmission
+                            </label>
+
+                            <div class="input-wrap select-wrap">
+                                <span class="input-icon">⚙️</span>
+
+                                <select id="transmission" required>
+                                    <option value="" disabled selected>
+                                        Select transmission
+                                    </option>
+
+                                    <option value="Manual">
+                                        Manual
+                                    </option>
+
+                                    <option value="Automatic">
+                                        Automatic
+                                    </option>
+
+                                    <option value="Semi-Auto">
+                                        Semi-Auto
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <!-- Fuel -->
+                        <div class="field">
+                            <label for="fuelType">
+                                Fuel Type
+                            </label>
+
+                            <div class="input-wrap select-wrap">
+                                <span class="input-icon">⛽</span>
+
+                                <select id="fuelType" required>
+
+                                    <option value="" disabled selected>
+                                        Select fuel type
+                                    </option>
+
+                                    <option value="Petrol">
+                                        Petrol
+                                    </option>
+
+                                    <option value="Diesel">
+                                        Diesel
+                                    </option>
+
+                                    <option value="Hybrid">
+                                        Hybrid
+                                    </option>
+
+                                    <option value="Electric">
+                                        Electric
+                                    </option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <!-- Tax -->
+                        <div class="field">
+                            <label for="tax">Tax</label>
+
+                            <div class="input-wrap">
+                                <span class="input-icon">💷</span>
+
+                                <input
+                                    type="number"
+                                    id="tax"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="150"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <!-- MPG -->
+                        <div class="field">
+                            <label for="mpg">MPG</label>
+
+                            <div class="input-wrap">
+                                <span class="input-icon">📈</span>
+
+                                <input
+                                    type="number"
+                                    id="mpg"
+                                    min="0"
+                                    step="0.1"
+                                    placeholder="50.4"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <!-- Engine -->
+                        <div class="field">
+                            <label for="engineSize">
+                                Engine Size
+                            </label>
+
+                            <div class="input-wrap">
+                                <span class="input-icon">🔧</span>
+
+                                <input
+                                    type="number"
+                                    id="engineSize"
+                                    min="0"
+                                    step="0.1"
+                                    placeholder="1.5"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Error -->
+                    <div
+                        id="errorMessage"
+                        class="message error-message"
+                        hidden
+                    ></div>
+
+
+                    <!-- Buttons -->
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            id="predictButton"
+                            class="predict-button"
+                        >
+                            <span class="button-icon">✦</span>
+
+                            <span class="button-text">
+                                Predict Price
+                            </span>
+
+                            <span class="spinner"></span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="resetButton"
+                            class="reset-button"
+                        >
+                            Reset
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Result Card -->
+            <aside class="card result-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <p class="section-kicker">
+                            MODEL OUTPUT
+                        </p>
+
+                        <h2>Your estimated value</h2>
+                    </div>
+
+                    <span class="step-badge">
+                        02
+                    </span>
+
+                </div>
+
+
+                <!-- Empty State -->
+                <div
+                    id="emptyResult"
+                    class="empty-result"
+                >
+
+                    <div class="car-orbit">
+
+                        <div class="orbit-ring"></div>
+
+                        <div class="orbit-car">
+                            🚗
+                        </div>
+
+                    </div>
+
+                    <h3>
+                        Ready when you are
+                    </h3>
+
+                    <p>
+                        Complete the vehicle details and run
+                        the model to see the estimated price.
+                    </p>
+
+                </div>
+
+
+                <!-- Prediction -->
+                <div
+                    id="predictionResult"
+                    class="prediction-result"
+                    hidden
+                >
+
+                    <p class="result-label">
+                        ESTIMATED FORD PRICE
+                    </p>
+
+                    <div
+                        id="priceValue"
+                        class="price"
+                    >
+                        £0
+                    </div>
+
+
+                    <div class="result-line"></div>
+
+
+                    <div class="summary">
+
+                        <div>
+                            <span>Vehicle</span>
+                            <strong id="summaryModel">
+                                —
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Year</span>
+                            <strong id="summaryYear">
+                                —
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Mileage</span>
+                            <strong id="summaryMileage">
+                                —
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Fuel</span>
+                            <strong id="summaryFuel">
+                                —
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="model-note">
+
+                        <span class="note-icon">
+                            ✓
+                        </span>
+
+                        <span>
+                            Prediction generated by your trained
+                            Random Forest model.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- Information -->
+        <section class="info-strip">
+
+            <div>
+                <span class="info-icon">⚡</span>
+
+                <div>
+                    <strong>Fast Prediction</strong>
+
+                    <small>
+                        Results returned from your API
+                    </small>
+                </div>
+            </div>
+
+
+            <div>
+                <span class="info-icon">🧠</span>
+
+                <div>
+                    <strong>ML Powered</strong>
+
+                    <small>
+                        Connected to your trained model
+                    </small>
+                </div>
+            </div>
+
+
+            <div>
+                <span class="info-icon">🔒</span>
+
+                <div>
+                    <strong>Input Validation</strong>
+
+                    <small>
+                        Valid vehicle data is submitted
+                    </small>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <span>
+            Ford Price Predictor
+        </span>
+
+        <span>
+            HTML • CSS • JavaScript • FastAPI
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
