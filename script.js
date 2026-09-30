@@ -3,7 +3,7 @@
 // ============================================================
 //
 // LOCAL API:
-const API_URL = "http://192.168.1.6:8000/predict";
+const API_URL = "http://127.0.0.1:8000/predict";
 //
 // WHEN YOU DEPLOY TO RENDER:
 // Change the line above to:
